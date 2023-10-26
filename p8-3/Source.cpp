@@ -6,10 +6,17 @@ int romanCharValue(char r);
 int convertRomanToInt(string s);
 
 int main() {
-	string romanNum;
+	string romanNum;	
 	cout << "Enter a roman number: ";
-	getline(cin, romanNum);
-	cout << romanNum << " = " << convertRomanToInt(romanNum);
+	while (getline(cin, romanNum)) {
+		if (romanNum == "Q") {
+			return 0;
+		}
+		else {
+			cout << romanNum << " = " << convertRomanToInt(romanNum) << endl;
+			cout << "Enter a roman number: ";
+		}
+	}
 }
 
 int romanCharValue(char r) {
